@@ -17,6 +17,7 @@ export class ClientService {
    }
 
   getAllClient() {
-     return this.http.get(this.urlAPI, ); //{headers: this.headers}
+       /* return this.http.get(this.urlAPI, {headers: this.headers}); */
+     return this.http.get(this.urlAPI, ); 
   }
 }

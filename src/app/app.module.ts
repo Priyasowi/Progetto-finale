@@ -11,6 +11,7 @@ import { DetailClientComponent } from './detail-client/detail-client.component';
 import { NewClientComponent } from './new-client/new-client.component';
 import { FooterComponent } from './footer/footer.component';
 import { MyHttpInterceptorInterceptor } from './my-http-interceptor.interceptor';
+import { FattureComponent } from './fatture/fatture.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MyHttpInterceptorInterceptor } from './my-http-interceptor.interceptor'
     ListaClientComponent,
     DetailClientComponent,
     NewClientComponent,
-    FooterComponent
+    FooterComponent,
+    FattureComponent
   ],
   imports: [
     BrowserModule,
