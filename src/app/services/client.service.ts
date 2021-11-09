@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { IClient } from '../interfaces/iclient';
 import { Icontent } from '../interfaces/icontent';
 
 @Injectable({
