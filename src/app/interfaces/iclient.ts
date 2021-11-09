@@ -1,4 +1,5 @@
 export interface IClient {
+   
     id?: number,
     ragioneSociale: string,
     partitaIva: string,

@@ -1,1 +1,67 @@
-<p>detail-client works!</p>
+<div class="container my-5">
+    <h1 class="text-center">Dettaglio Cliente: {{detailClient.nomeContatto}} {{detailClient.cognomeContatto}}</h1>
+
+
+    <div class="row m-5">
+        <div class="col-sm-6">
+            <h3 class="text-center">Informazioni</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: {{detailClient.id}}</li>
+                <li class="list-group-item">Ragione sociale: <i>{{detailClient.ragioneSociale}}</i> </li>
+                <li class="list-group-item">Partita Iva: {{detailClient.partitaIva}}</li>
+                <li class="list-group-item">Tipo Cliente: {{detailClient.tipoCliente}}</li>
+                <li class="list-group-item">Email: {{detailClient.email}}</li>
+                <li class="list-group-item">Pec: {{detailClient.pec}}</li>
+                <li class="list-group-item">Telefono: {{detailClient.telefono}}</li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="text-center">Contatto cliente</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Telefono Cliente: {{detailClient.telefonoContatto}}</li>
+                <li class="list-group-item">Email: {{detailClient.emailContatto}}</li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="text-center">Indirizzo</h2>
+    <div class="row m-5">
+
+        <div class="col-sm-6">
+
+            <h3 class="text-center">Sede Operativa</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: {{detailClient.indirizzoSedeOperativa.id}}</li>
+                <li class="list-group-item">VIA:
+                    {{detailClient.indirizzoSedeOperativa.via}},{{detailClient.indirizzoSedeOperativa.civico}}</li>
+                <li class="list-group-item">CAP: {{detailClient.indirizzoSedeOperativa.cap}}</li>
+                <li class="list-group-item">Comune ID: {{detailClient.indirizzoSedeOperativa.comune.id}}</li>
+                <li class="list-group-item">Comune: {{detailClient.indirizzoSedeOperativa.comune.nome}} </li>
+                <li class="list-group-item">Provincia ID: {{detailClient.indirizzoSedeOperativa.comune.provincia.id}}
+                </li>
+                <li class="list-group-item">Provincia: {{detailClient.indirizzoSedeOperativa.comune.provincia.nome}}
+                    &nbsp; ({{detailClient.indirizzoSedeOperativa.comune.provincia.sigla}}) </li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="text-center">Sede Legale</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: {{detailClient.indirizzoSedeLegale.id}}</li>
+                <li class="list-group-item">VIA:
+                    {{detailClient.indirizzoSedeLegale.via}},{{detailClient.indirizzoSedeLegale.civico}}</li>
+                <li class="list-group-item">CAP: {{detailClient.indirizzoSedeLegale.cap}}</li>
+                <li class="list-group-item">Comune ID: {{detailClient.indirizzoSedeLegale.comune.id}}</li>
+                <li class="list-group-item">Comune: {{detailClient.indirizzoSedeLegale.comune.nome}} </li>
+                <li class="list-group-item">Provincia ID: {{detailClient.indirizzoSedeLegale.comune.provincia.id}} </li>
+                <li class="list-group-item">Provincia: {{detailClient.indirizzoSedeLegale.comune.provincia.nome}} &nbsp;
+                    ({{detailClient.indirizzoSedeLegale.comune.provincia.sigla}}) </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="container">
+        <h4 class="text-center">Ulteriori informazioni</h4>
+        <p> <i>Data inserimento:</i> {{detailClient.dataInserimento}}</p>
+        <p> <i>Data ultimo contatto:</i> {{detailClient.dataUltimoContatto}}</p>
+        <p> <i>Fatturato annuale:</i> {{detailClient.fatturatoAnnuale}}</p>
+    </div>
+</div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IClient } from '../interfaces/iclient';
+import { ClientService } from '../services/client.service';
 
 @Component({
   selector: 'app-detail-client',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailClientComponent implements OnInit {
 
-  constructor() { }
+  detailClient!: IClient;
+
+  constructor(private clientService: ClientService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(element => {
+      if(element.id) {
+        this.clientService.getClient(element.id).subscribe(client => this.detailClient = client);
+      }
+    });
   }
 
 }

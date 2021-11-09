@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IClient } from '../interfaces/iclient';
+import { Icontent } from '../interfaces/icontent';
 import { ClientService } from '../services/client.service';
 
 @Component({
@@ -8,10 +11,17 @@ import { ClientService } from '../services/client.service';
 })
 export class ListaClientComponent implements OnInit {
 
-  constructor(private clientService: ClientService) { }
+  client!: Icontent;
+
+  constructor(private clientService: ClientService, private router: Router) { }
 
   ngOnInit(): void {
-    this.clientService.getAllClient().subscribe(response => console.log(response));
+    this.clientService.getAllClient().subscribe(response => this.client = response);
+  
+  }
+
+  detailClient(item : IClient) {
+    this.router.navigate(['client', item.id, 'detail']);
   }
 
 }
