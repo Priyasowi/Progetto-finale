@@ -23,5 +23,14 @@ export class ListaClientComponent implements OnInit {
   detailClient(item : IClient) {
     this.router.navigate(['client', item.id, 'detail']);
   }
+  removeClient(item: IClient) {
+    this.clientService.deleteClient(item).subscribe(response => {
+      console.log(response);
+      this.clientService.getAllClient().subscribe(response => this.client = response);
+    })
+  }
 
+  newClient(){
+    this.router.navigate(['client/new']);
+  }
 }

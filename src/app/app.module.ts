@@ -12,6 +12,7 @@ import { NewClientComponent } from './new-client/new-client.component';
 import { FooterComponent } from './footer/footer.component';
 import { MyHttpInterceptorInterceptor } from './my-http-interceptor.interceptor';
 import { FattureComponent } from './fatture/fatture.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FattureComponent } from './fatture/fatture.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

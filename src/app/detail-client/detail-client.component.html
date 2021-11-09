@@ -1,10 +1,11 @@
+<app-header></app-header>
 <div class="container my-5">
     <h1 class="text-center">Dettaglio Cliente: {{detailClient.nomeContatto}} {{detailClient.cognomeContatto}}</h1>
 
 
     <div class="row m-5">
         <div class="col-sm-6">
-            <h3 class="text-center">Informazioni</h3>
+            <h3 class="text-center bg-secondary text-light">Informazioni</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: {{detailClient.id}}</li>
                 <li class="list-group-item">Ragione sociale: <i>{{detailClient.ragioneSociale}}</i> </li>
@@ -16,7 +17,7 @@
             </ul>
         </div>
         <div class="col-sm-6">
-            <h3 class="text-center">Contatto cliente</h3>
+            <h3 class="text-center bg-secondary text-light">Contatto cliente</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Telefono Cliente: {{detailClient.telefonoContatto}}</li>
                 <li class="list-group-item">Email: {{detailClient.emailContatto}}</li>
@@ -28,7 +29,7 @@
 
         <div class="col-sm-6">
 
-            <h3 class="text-center">Sede Operativa</h3>
+            <h3 class="text-center bg-secondary text-light">Sede Operativa</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: {{detailClient.indirizzoSedeOperativa.id}}</li>
                 <li class="list-group-item">VIA:
@@ -43,7 +44,7 @@
             </ul>
         </div>
         <div class="col-sm-6">
-            <h3 class="text-center">Sede Legale</h3>
+            <h3 class="text-center bg-secondary text-light">Sede Legale</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: {{detailClient.indirizzoSedeLegale.id}}</li>
                 <li class="list-group-item">VIA:

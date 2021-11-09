@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { IClient } from '../interfaces/iclient';
 import { Icontent } from '../interfaces/icontent';
 
 @Injectable({
@@ -16,11 +17,18 @@ export class ClientService {
    }
 
   getAllClient() {
-       /* return this.http.get(this.urlAPI, {headers: this.headers}); */
      return this.http.get<Icontent>(this.urlAPI, ); 
   }
 
   getClient(id: number) {
     return this.http.get<any>(this.urlAPIDetail + id);
+  }
+
+  deleteClient(obj: IClient) {
+    return this.http.delete(this.urlAPI + obj.id);
+  }
+  
+  createClient(obj: IClient) {
+    return this.http.post(this.urlAPI, obj.id);
   }
 }
