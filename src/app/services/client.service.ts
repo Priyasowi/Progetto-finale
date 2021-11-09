@@ -27,8 +27,12 @@ export class ClientService {
   deleteClient(obj: IClient) {
     return this.http.delete(this.urlAPI + obj.id);
   }
-  
+
   createClient(obj: IClient) {
-    return this.http.post(this.urlAPI, obj.id);
+    return this.http.post<IClient>(this.urlAPI, obj.id);
+  }
+
+  updateClient(item: IClient) {
+    return this.http.put<IClient>(this.urlAPI + item.id, item)
   }
 }

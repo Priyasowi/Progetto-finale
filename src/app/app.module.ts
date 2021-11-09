@@ -8,11 +8,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { ListaClientComponent } from './lista-client/lista-client.component';
 import { DetailClientComponent } from './detail-client/detail-client.component';
-import { NewClientComponent } from './new-client/new-client.component';
+
 import { FooterComponent } from './footer/footer.component';
 import { MyHttpInterceptorInterceptor } from './my-http-interceptor.interceptor';
 import { FattureComponent } from './fatture/fatture.component';
 import { FormsModule } from '@angular/forms';
+import { FormClientComponent } from './form-client/form-client.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ListaClientComponent,
     DetailClientComponent,
-    NewClientComponent,
+   FormClientComponent,
     FooterComponent,
     FattureComponent
   ],
