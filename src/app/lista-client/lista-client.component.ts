@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IClient } from '../interfaces/iclient';
 import { Icontent } from '../interfaces/icontent';
 import { ClientService } from '../services/client.service';
@@ -13,7 +13,7 @@ export class ListaClientComponent implements OnInit {
 
   client!: Icontent;
 
-  constructor(private clientService: ClientService, private router: Router ) { }
+  constructor(private clientService: ClientService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.clientService.getAllClient().subscribe(response => this.client = response);

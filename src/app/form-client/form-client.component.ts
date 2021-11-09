@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from '../classes/client';
@@ -12,10 +11,13 @@ import { ClientService } from '../services/client.service';
 })
 export class FormClientComponent implements OnInit {
 
-  constructor(private clientService: ClientService, private router: Router, private route: ActivatedRoute) { }
-
   title: string = "";
   editClient!: IClient;
+
+  constructor(
+    private clientService: ClientService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
@@ -34,6 +36,7 @@ export class FormClientComponent implements OnInit {
       if (!element.id) {
         this.clientService.createClient(this.editClient).subscribe(response => {
           console.log(response);
+          this.router.navigate(['client/list'])
         })
       } else {
         this.clientService.updateClient(this.editClient).subscribe(response => {

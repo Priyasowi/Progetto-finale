@@ -1,30 +1,73 @@
-<app-header></app-header>
+
 <div class="container my-3">
-    <h1 class="text-center"> </h1>
+    <h1 class="text-center">{{title}}: {{editClient.nomeContatto}} {{editClient.cognomeContatto}}</h1>
     <div class="card text-center">
+        <h3 class="text-center bg-secondary text-light">Informazioni Cliente</h3>
         <form class="m-3">
             <div class="form-group">
-              <input type="text" class="form-control" name="name" placeholder="Name...">
+                <input type="text" [(ngModel)]="editClient.nomeContatto" class="form-control" name="nomeContatto"
+                    placeholder="Nome">
             </div>
             <div class="form-group">
-                <input type="text"  class="form-control" name="category" placeholder="Category...">
+                <input type="text" [(ngModel)]="editClient.cognomeContatto" class="form-control" name="cognomeContatto"
+                    placeholder="Cognome">
             </div>
             <div class="form-group">
-                <input type="text"  class="form-control" name="name" placeholder="Name...">
-              </div>
-              <div class="form-group">
-                  <input type="text"  class="form-control" name="category" placeholder="Category...">
-              </div>
-              <div class="form-group">
-                <input type="text"class="form-control" name="name" placeholder="Name...">
-              </div>
-              <div class="form-group">
-                  <input type="text"  class="form-control" name="category" placeholder="Category...">
-              </div>
-            
-            <div class="form-group">
-                <button type="submit" class="btn btn-success form-control" (click)="saveClient()">Save Product</button>
+                <input type="text" [(ngModel)]="editClient.email" class="form-control" name="email" placeholder="Email">
             </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="editClient.telefonoContatto" class="form-control" name="category"
+                    placeholder="telefono">
+            </div>
+           
         </form>
+        <div class="card text-center">
+            <h3 class="text-center bg-secondary text-light">Informazioni Specifiche</h3>
+            <form class="m-3">
+
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="editClient.ragioneSociale" class="form-control"
+                        name="ragioneSociale" placeholder="Ragione Sociale">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="editClient.partitaIva" class="form-control" name="partitaIva"
+                        placeholder="PartitaIva" placeholder="Partita Iva">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="editClient.tipoCliente" class="form-control" name="tipoCliente"
+                        placeholder="Tipo Cliente">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="editClient.email" class="form-control" name="email" placeholder="Email"
+                        placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="editClient.pec" class="form-control" name="pec"
+                        placeholder="PEC">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="editClient.telefono" class="form-control" name="telefono"
+                        placeholder="Telefono">
+                </div>
+
+
+                <div class="row m-5">
+
+                    <div class="col-sm-6">
+                        <h3 class="text-center bg-secondary text-light">Indirizzo Sede Legale</h3>
+                        <input type="text" [(ngModel)]="editClient.indirizzoSedeLegale.via" class="form-control"
+                            name="indirizzoSedeOperativa.via" placeholder="Via">
+                    </div>
+                    <div class="col-sm-6">
+                        <h3 class="text-center bg-secondary text-light">Indirizzo Sede Operativa</h3>
+                        <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.via" class="form-control"
+                        name="indirizzoSedeOperativa.via" placeholder="Via">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success form-control" (click)="saveClient()">Salva modifiche</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

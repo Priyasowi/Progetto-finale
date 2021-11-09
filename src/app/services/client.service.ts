@@ -11,6 +11,7 @@ export class ClientService {
 
   urlAPI = environment.urlAPI + '/api/clienti?page=0&size=20&sort=id,ASC';
   urlAPIDetail = environment.urlAPI + '/api/clienti/';
+  urlAPINew = environment.urlAPI + '/api/clienti';
 
   constructor(private http: HttpClient) {
 
@@ -24,15 +25,16 @@ export class ClientService {
     return this.http.get<any>(this.urlAPIDetail + id);
   }
 
-  deleteClient(obj: IClient) {
-    return this.http.delete(this.urlAPI + obj.id);
+  deleteClient(item: IClient) {
+    return this.http.delete(this.urlAPI + item.id);
   }
 
   createClient(obj: IClient) {
-    return this.http.post<IClient>(this.urlAPI, obj.id);
+    return this.http.post<IClient>(this.urlAPINew, obj);
   }
 
   updateClient(item: IClient) {
-    return this.http.put<IClient>(this.urlAPI + item.id, item)
+    return this.http.put<IClient>(this.urlAPIDetail + item.id, item);
+  
   }
 }
