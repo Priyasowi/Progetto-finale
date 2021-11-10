@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Contentf } from '../interfaces/contentf';
 import { FattureService } from '../services/fatture.service';
 
@@ -14,10 +14,12 @@ export class FattureComponent implements OnInit {
 
  fattura!: Contentf;
 
-  constructor(private fattureService: FattureService, private router: Router) { }
+  constructor(private fattureService: FattureService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.fattureService.getAllFatture().subscribe(response => this.fattura = response);
+   this.fattureService.getAllFatture().subscribe(response => console.log(response));
   }
  
+
+  
 }

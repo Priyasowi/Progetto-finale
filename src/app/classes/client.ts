@@ -1,6 +1,8 @@
 export class Client {
+
+    id?: number;
     ragioneSociale: string;
-    partitaIva: string
+    partitaIva: string;
     tipoCliente: string;
     email: string;
     pec: string;
@@ -9,8 +11,8 @@ export class Client {
     cognomeContatto: string;
     telefonoContatto: string;
     emailContatto: string;
-    indirizzoSedeOperativa!: {
-       
+    indirizzoSedeOperativa: {
+        id: number;
         via: string;
         civico: string;
         cap: string;
@@ -21,21 +23,21 @@ export class Client {
             provincia: {
                 id?: number;
                 nome: string;
-                sigla: string
-            }
-        }
-    };
-    indirizzoSedeLegale!: {
-      
+                sigla: string;
+            };
+        };
+    } | any;
+    indirizzoSedeLegale: {
+        id?: number;
         via: string;
         civico: string;
         cap: string;
         localita: string;
         comune: {
-            id?: number;
+            id: number;
             nome: string;
             provincia: {
-                id?: number;
+                id: number;
                 nome: string;
                 sigla: string
             }
@@ -43,8 +45,8 @@ export class Client {
     };
     dataInserimento: string;
     dataUltimoContatto: string;
-    fatturatoAnnuale: number
-
+    fatturatoAnnuale: number;
+   
     constructor() {
         this.ragioneSociale = "";
         this.partitaIva = "";
@@ -56,13 +58,43 @@ export class Client {
         this.cognomeContatto = "";
         this.telefonoContatto = "";
         this.emailContatto = "";
-       this.dataInserimento = "";
-       this.dataUltimoContatto ="";
-       this.fatturatoAnnuale =0;
-      
-       }
-        
+        this.indirizzoSedeLegale = {
+            id: 0,
+            via: "",
+            civico: "",
+            cap: "",
+            localita: "",
+            comune : {
+                id: 0, 
+                nome : "",
+                provincia :{
+                    id: 0, 
+                    nome: "",
+                    sigla: "",
+                } 
+            }
+        };
+        this.indirizzoSedeLegale = {
+            id: 0,
+            via: "",
+            civico: "",
+            cap: "",
+            localita: "",
+            comune : {
+                id: 0, 
+                nome : "",
+                provincia :{
+                    id: 0, 
+                    nome: "",
+                    sigla: "",
+                } 
+            }
+        }
+        this.dataInserimento ="";
+        this.dataUltimoContatto ="";
+        this.fatturatoAnnuale = 0;
 
+ 
     }
 
-
+}

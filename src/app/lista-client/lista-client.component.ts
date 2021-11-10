@@ -13,7 +13,10 @@ export class ListaClientComponent implements OnInit {
 
   client!: Icontent;
 
-  constructor(private clientService: ClientService, private router: Router, private route: ActivatedRoute) { }
+  constructor(
+  private clientService: ClientService,
+   private router: Router,
+   private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.clientService.getAllClient().subscribe(response => this.client = response);

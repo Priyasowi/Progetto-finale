@@ -10,8 +10,9 @@ import { Icontent } from '../interfaces/icontent';
 export class ClientService {
 
   urlAPI = environment.urlAPI + '/api/clienti?page=0&size=20&sort=id,ASC';
-  urlAPIDetail = environment.urlAPI + '/api/clienti/';
-  urlAPINew = environment.urlAPI + '/api/clienti';
+  urlAPIDetail = environment.urlAPI + '/api/clienti';
+  urlAPITipiCliente = environment.urlAPI + '/api/clienti/tipicliente'
+  
 
   constructor(private http: HttpClient) {
 
@@ -20,21 +21,23 @@ export class ClientService {
   getAllClient() {
      return this.http.get<Icontent>(this.urlAPI, ); 
   }
-
+  getAllTipiClienti() {
+    return this.http.get<string>(this.urlAPITipiCliente,)
+  }
   getClient(id: number) {
-    return this.http.get<any>(this.urlAPIDetail + id);
+    return this.http.get<any>(this.urlAPIDetail +'/' +id);
   }
 
-  deleteClient(item: IClient) {
-    return this.http.delete(this.urlAPI + item.id);
+  deleteClient(clienti: IClient) {
+    return this.http.delete(this.urlAPI + clienti.id);
   }
 
-  createClient(obj: IClient) {
-    return this.http.post<IClient>(this.urlAPINew, obj);
+  createClient(clienti: IClient) {
+    return this.http.post<IClient>(this.urlAPIDetail, clienti);
   }
 
-  updateClient(item: IClient) {
-    return this.http.put<IClient>(this.urlAPIDetail + item.id, item);
+  updateClient(clienti: IClient) {
+    return this.http.put<IClient>(this.urlAPIDetail + clienti.id, clienti);
   
   }
 }
