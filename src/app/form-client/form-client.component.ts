@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Client } from '../classes/client';
+
 import { IClient } from '../interfaces/iclient';
 import { IComuni } from '../interfaces/icomuni';
 import { IProvince } from '../interfaces/iprovince';
@@ -17,7 +17,7 @@ export class FormClientComponent implements OnInit {
   title: string = ""
   comuni: IComuni[] = [];
   province: IProvince[] = [];
-  tipoCliente = [];
+  tipoCliente: string []= [];
 
   editClient: IClient = {
 
@@ -62,10 +62,6 @@ export class FormClientComponent implements OnInit {
     fatturatoAnnuale: 0
   }
   
-
-
-
-
   constructor(
     private clientService: ClientService,
     private router: Router,
@@ -85,11 +81,10 @@ export class FormClientComponent implements OnInit {
        this.title = "Modifica Cliente";
        this.clientService.updateClient(this.editClient).subscribe(response => this.editClient = response);
      }
-   
+   this.getAllComuni()
+  this.getAllProvince()
     })
-    this.comuniService;
-    this.provinceService;
-    this.tipoCliente;
+  
     }
   getAllProvince() {
    this.provinceService.getAllProvince().subscribe(response => this.province = response);
@@ -102,6 +97,7 @@ export class FormClientComponent implements OnInit {
 
 
   saveClient() {
+    
     this.route.params.subscribe(element => {
       if (!element.id) {
         this.clientService.createClient(this.editClient).subscribe(response => {

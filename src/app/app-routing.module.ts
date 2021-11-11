@@ -21,7 +21,7 @@ const routes: Routes = [
     component: FattureComponent
   },
   {
-    path: 'client/:id/detail',
+    path: 'client/detail/:id',
     component: DetailClientComponent
   },
   {

@@ -30,6 +30,6 @@ export class FattureService {
   }
 
   updateFattura(fattura : IFatture) {
-    return this.http.put<IFatture>(this.urlAPIDetailf + fattura.id, fattura)
+    return this.http.put<IFatture>(this.urlAPIDetailf + fattura.id, fattura);
   }
 }

@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 body{
+  font-family: "Poppins", sans-serif; 
     background-image: url(../src/assets/img/sfondo.jpg);
     height:100vh;
     width:100%;
     margin-top: 100px;
 
+
 }
-list-group-item{
+ul list-group-item {
     background-color: #ffffff91;
     border: 1px solid rgba(0,0,0,.125);
 }
+

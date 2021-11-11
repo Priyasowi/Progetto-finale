@@ -14,10 +14,13 @@ export class FattureComponent implements OnInit {
 
  fattura!: Contentf;
 
-  constructor(private fattureService: FattureService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private fattureService: FattureService,
+     private router: Router,
+      private route: ActivatedRoute
+      ) { }
 
   ngOnInit(): void {
-   this.fattureService.getAllFatture().subscribe(response => console.log(response));
+   this.fattureService.getAllFatture().subscribe(response => this.fattura = response);
   }
  
 

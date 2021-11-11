@@ -23,11 +23,11 @@ export class ListaClientComponent implements OnInit {
   
   }
 
-  detailClient(item : IClient) {
-    this.router.navigate(['client', item.id, 'detail']);
+  detailClient(clienti : IClient) {
+    this.router.navigate(['client','detail', clienti.id, ]);
   }
-  removeClient(item: IClient) {
-    this.clientService.deleteClient(item).subscribe(response => {
+  removeClient(clienti: IClient) {
+    this.clientService.deleteClient(clienti).subscribe(response => {
       console.log(response);
       this.clientService.getAllClient().subscribe(response => this.client = response);
     })
@@ -36,7 +36,7 @@ export class ListaClientComponent implements OnInit {
   newClient(){
     this.router.navigate(['client/new']);
   }
-  selectClient(item: IClient) {
-    this.router.navigate(['client', item.id, 'edit']);
+  selectClient(clienti: IClient) {
+    this.router.navigate(['client', clienti.id, 'edit']);
   }
 }
