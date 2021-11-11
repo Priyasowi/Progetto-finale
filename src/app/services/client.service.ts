@@ -24,8 +24,8 @@ export class ClientService {
   getAllTipiClienti() {
     return this.http.get<string>(this.urlAPITipiCliente,)
   }
-  getClient(id: number) {
-    return this.http.get<any>(this.urlAPIDetail +'/' +id);
+  getClient(id: any) {
+    return this.http.get<any>(this.urlAPIDetail+ '/'+ id);
   }
 
   deleteClient(clienti: IClient) {

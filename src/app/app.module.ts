@@ -14,6 +14,7 @@ import { MyHttpInterceptorInterceptor } from './my-http-interceptor.interceptor'
 import { FattureComponent } from './fatture/fatture.component';
 import { FormsModule } from '@angular/forms';
 import { FormClientComponent } from './form-client/form-client.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormClientComponent } from './form-client/form-client.component';
     DetailClientComponent,
    FormClientComponent,
     FooterComponent,
-    FattureComponent
+    FattureComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,6 @@ export class TipoClienteService {
    }
 
    getAllTipiClienti() {
-     return this.http.get<ITipoCliente>(this.urlAPITipiCliente,)
+     return this.http.get<string>(this.urlAPITipiCliente,)
    }
 }

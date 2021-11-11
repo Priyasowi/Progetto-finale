@@ -61,6 +61,7 @@ export class FormClientComponent implements OnInit {
     dataUltimoContatto: "2021-04-10T04:27:14.239+00:00",
     fatturatoAnnuale: 0
   }
+  
 
 
 
@@ -75,26 +76,29 @@ export class FormClientComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.tipoCliente;
-    this.getComune();
-    this.getProvincia();
-
-    this.route.params.subscribe(element => {
-     
-    
-    })
   
+    this.route.params.subscribe(element => {
+     if(!element.id) {
+       this.title = "Nuovo Cliente";
+       this.clientService.createClient(this.editClient).subscribe(response => this.editClient = response);
+     } else {
+       this.title = "Modifica Cliente";
+       this.clientService.updateClient(this.editClient).subscribe(response => this.editClient = response);
+     }
+   
+    })
+    this.comuniService;
+    this.provinceService;
+    this.tipoCliente;
+    }
+  getAllProvince() {
+   this.provinceService.getAllProvince().subscribe(response => this.province = response);
   }
-  getTipoCliente(){
-    this.tipoCliente
+  getAllComuni() {
+    this.comuniService.getAllComuni().subscribe(response => this.comuni = response);
+  
+      
   }
-  getProvincia() {
-    throw new Error('Method not implemented.');
-  }
-  getComune() {
-    throw new Error('Method not implemented.');
-  }
-
 
 
   saveClient() {

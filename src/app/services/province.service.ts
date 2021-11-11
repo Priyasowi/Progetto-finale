@@ -16,7 +16,7 @@ export class ProvinceService {
    }
 
    getAllProvince() {
-     return this.http.get<IProvince>(this.urlAPIprovince, );
+     return this.http.get<IProvince[]>(this.urlAPIprovince, );
    }
    getProvincia(id : number) {
     return this.http.get(this.urlAPIprovincia +'/' +id)

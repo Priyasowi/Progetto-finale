@@ -11,15 +11,15 @@ export class ComuniService {
   urlAPIcomuni = environment.urlAPI + '/api/comuni?page=0&size=20&sort=id,ASC';
   urlAPIcomune = environment.urlAPI + '/api/comuni';
 
-  constructor(private http : HttpClient) { 
+  constructor(private http: HttpClient) {
 
   }
 
-getAllComuni() {
-  return this.http.get<IComuni>(this.urlAPIcomuni, )
-}
-getComune(id: number){
-  return this.http.get(this.urlAPIcomune +'/' +id)
-}
+  getAllComuni() {
+    return this.http.get<IComuni[]>(this.urlAPIcomuni,)
+  }
+  getComune(id: number) {
+    return this.http.get(this.urlAPIcomune + '/' + id)
+  }
 }
 
