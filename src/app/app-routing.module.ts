@@ -4,33 +4,44 @@ import { DetailClientComponent } from './detail-client/detail-client.component';
 import { FattureComponent } from './fatture/fatture.component';
 import { FormClientComponent } from './form-client/form-client.component';
 import { ListaClientComponent } from './lista-client/lista-client.component';
+import { LoginComponent } from './login/login.component';
+import { RouteGuardService } from './services/route-guard.service';
 
 
 const routes: Routes = [
   {
     path: 'client/list',
-    component: ListaClientComponent
+    component: ListaClientComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'client/list'
+    redirectTo: 'login'
   },
   {
     path: 'client/fatture',
-    component: FattureComponent
+    component: FattureComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path: 'client/detail/:id',
-    component: DetailClientComponent
+    component: DetailClientComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path: 'client/:id/edit',
-    component: FormClientComponent
+    component: FormClientComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path: 'client/new',
-    component: FormClientComponent
+    component: FormClientComponent,
+    canActivate: [RouteGuardService]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

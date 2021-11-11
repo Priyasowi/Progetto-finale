@@ -57,5 +57,5 @@ export interface IFatture {
     dataUltimoContatto: string,
     fatturatoAnnuale: number
     }
-   
+
 }

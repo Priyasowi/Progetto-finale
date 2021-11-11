@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contentf } from '../interfaces/contentf';
+import { IFatture } from '../interfaces/ifatture';
 import { FattureService } from '../services/fatture.service';
 
 
@@ -12,7 +13,7 @@ import { FattureService } from '../services/fatture.service';
 })
 export class FattureComponent implements OnInit {
 
- fattura!: Contentf;
+ fatture!: Contentf;
 
   constructor(private fattureService: FattureService,
      private router: Router,
@@ -20,9 +21,12 @@ export class FattureComponent implements OnInit {
       ) { }
 
   ngOnInit(): void {
-   this.fattureService.getAllFatture().subscribe(response => this.fattura = response);
+  //  this.fattureService.getAllFatture().subscribe(response => this.fattura = response);
+  this.fattureService.getAllFatture().subscribe(response => this.fatture = response);
   }
- 
+  removeClient(item : IFatture){
+
+  }
 
   
 }
