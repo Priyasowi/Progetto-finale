@@ -15,7 +15,8 @@
           placeholder="Cognome">
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="editClient.email" class="form-control" name="email" placeholder="Email">
+        <input type="text" [(ngModel)]="editClient.emailContatto" class="form-control" name="email"
+          placeholder="Email Contatto">
       </div>
       <div class="form-group">
         <input type="text" [(ngModel)]="editClient.telefonoContatto" class="form-control" name="category"
@@ -26,7 +27,6 @@
     <div class="card text-center">
       <h3 class="text-center bg-secondary text-light">Informazioni Specifiche</h3>
       <form class="m-3">
-
         <div class="form-group">
           <input type="text" [(ngModel)]="editClient.ragioneSociale" class="form-control" name="ragioneSociale"
             placeholder="Ragione Sociale">
@@ -36,15 +36,16 @@
             placeholder="PartitaIva" placeholder="Partita Iva">
         </div>
         <div class="form-group">
-
           <div class="input-group-prepend">
-            <label class="input-group-text " for="inputGroupSelect01">Tipo Cliente</label>
+            <label class="input-group-text" for="inputGroupSelect01">Tipo Cliente</label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
-            <option selected [ngValue]="editClient.tipoCliente"></option>
-            <option [ngValue]="item" *ngFor="let item of tipoCliente">{{editClient.tipoCliente}}</option>
+            <option selected></option>
+            <option [ngValue]="item" *ngFor="let item of tipoCliente">{{item}}</option>
           </select>
         </div>
+
+
         <div class="form-group">
           <input type="text" [(ngModel)]="editClient.email" class="form-control" name="email" placeholder="Email"
             placeholder="Email">
@@ -56,42 +57,53 @@
           <input type="text" [(ngModel)]="editClient.telefono" class="form-control" name="telefono"
             placeholder="Telefono">
         </div>
+     
 
+     
 
-        <div class="row m-5">
+        <div>
+          <h3 class="text-center bg-secondary text-light">Indirizzo Sede Legale</h3>
 
-          <div class="col-sm-6">
-            <h3 class="text-center bg-secondary text-light">Indirizzo Sede Legale</h3>
-            <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.via" class="form-control"
-              name="indirizzoSedeOperativa.via" placeholder="Via">
-            <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.civico" class="form-control"
-              name="indirizzoSedeOperativa.civico" placeholder="Civico">
-            <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.cap" class="form-control"
-              name="indirizzoSedeOperativa.cap" placeholder="Cap">
-            <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.localita" class="form-control"
-              name="indirizzoSedeOperativa.localita" placeholder="Localita">
-            <div class="input-group mb-3 w-75">
+          <input type="text" [(ngModel)]="editClient.indirizzoSedeLegale.via" class="form-control"
+            name="indirizzoSedeLegale.via" placeholder="Via">
+
+          <input type="text" [(ngModel)]="editClient.indirizzoSedeLegale.civico" class="form-control"
+            name="indirizzoSedeLegale.civico" placeholder="Civico">
+          <input type="text" [(ngModel)]="editClient.indirizzoSedeLegale.cap" class="form-control"
+            name="indirizzoSedeLegale.cap" placeholder="Cap">
+
+          <input type="text" [(ngModel)]="editClient.indirizzoSedeLegale.localita" class="form-control"
+            name="indirizzoSedeLegale.localita" placeholder="Localita">
+
+          <div class="input-group mb-3 w-75">
+            <div class="form-group">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Comune</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeLegale.comune">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.nome"></option>
-                <option [ngValue]="item" *ngFor="let item of comuni">{{item}}</option>
+              <select class="custom-select" id="inputGroupSelect01"
+                [(ngModel)]="editClient.indirizzoSedeLegale.comune.nome">
+                <option selected class="form-control"></option>
+                <option [ngValue]="item" *ngFor="let item of comuni" class="form-control">{{item.nome}}</option>
               </select>
+            </div>
+
+            <div class="form-group mx-2">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Provincia</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeLegale.comune.provincia">
-                <option selected [ngValue]="editClient.indirizzoSedeLegale.comune.provincia.nome"></option>
-                <option [ngValue]="item" *ngFor="let item of province">{{item}}</option>
-              </select>
+              <input type="text" [(ngModel)]="editClient.indirizzoSedeLegale.comune.provincia.nome"
+                class="form-control">
+            </div>
+            <div class="form-group mx-2">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Sigla</label>
               </div>
-             
+              <input type="text" [(ngModel)]="editClient.indirizzoSedeLegale.comune.provincia.sigla"
+                class="form-control">
             </div>
+
           </div>
-          <div class="col-sm-6">
+          <div>
             <h3 class="text-center bg-secondary text-light">Indirizzo Sede Operativa</h3>
             <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.via" class="form-control"
               name="indirizzoSedeOperativa.via" placeholder="Via">
@@ -101,55 +113,49 @@
               name="indirizzoSedeOperativa.cap" placeholder="Cap">
             <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.localita" class="form-control"
               name="indirizzoSedeOperativa.localita" placeholder="Localita">
+
             <div class="input-group mb-3 w-75">
+              <div class="form-group">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Comune</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeOperativa.comune">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.nome"></option>
-                <option [ngValue]="item" *ngFor="let item of comuni">{{item}}</option>
-              </select>
-              <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Provincia</label>
-              </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeOperativa.comune.provincia">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.provincia.nome"></option>
-                <option [ngValue]="item" *ngFor="let item of province">{{item}}</option>
-              </select>
-              <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Sigla</label>
-              </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.provincia.sigla"></option>
-                <option [ngValue]="item" *ngFor="let item of comuni">{{item}}</option>
-              </select>
+              <select class="custom-select" id="inputGroupSelect01"
+              [(ngModel)]="editClient.indirizzoSedeOperativa.comune">
+              <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune" class="form-control">{{editClient.indirizzoSedeOperativa.comune}}</option>
+              <option [ngValue]="item" *ngFor="let item of comuni" class="form-control">{{item.nome}}</option>
+            </select>
             </div>
-
+              <div class="form-group mx-2">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Provincia</label>
+                </div>
+                <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.comune.provincia.nome"
+                  class="form-control">
+              </div>
+              <div class="form-group mx-2">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Sigla</label>
+                </div>
+                <input type="text" [(ngModel)]="editClient.indirizzoSedeOperativa.comune.provincia.sigla"
+                  class="form-control">
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="container my-4">
-          <h4>Ulteriori informazioni</h4>
-          <p> <i>Data inserimento:</i> {{editClient.dataInserimento}}</p>
-          <p> <i>Data ultimo contatto:</i> {{editClient.dataUltimoContatto}}</p>
-          <p> <i>Fatturato annuale:</i> {{editClient.fatturatoAnnuale}}</p>
-      </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-success form-control" (click)="saveClient()">Salva
-            modifiche</button>
-        </div>
+       </div>
       </form>
+      <div class="container my-4">
+        <h4>Ulteriori informazioni</h4>
+        <p> <i>Data inserimento:</i> {{editClient.dataInserimento}}</p>
+        <p> <i>Data ultimo contatto:</i> {{editClient.dataUltimoContatto}}</p>
+        <p> <i>Fatturato annuale:</i> {{editClient.fatturatoAnnuale}}</p>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" (click)="saveClient()">Salva
+        </button>
+      </div>
+
 
     </div>
   </div>
 
 </div>
-
-<!-- <div class="input-group mb-3 w-75">
-                            <div class="input-group-prepend">
-                              <label class="input-group-text" for="inputGroupSelect01">Comune</label>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="clienteMod.indirizzoSedeOperativa.comune">
-                              <option selected [ngValue]="clienteMod.indirizzoSedeOperativa.comune">{{clienteMod.indirizzoSedeOperativa.comune.nome}}</option>
-                              <option [ngValue]="item" *ngFor="let item of comuni">{{item.nome}}</option>
-                            </select>
-                          </div> -->

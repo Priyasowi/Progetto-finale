@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   signin() {
-    if(this.loginEmail === 'admin' && this.loginPassword === '111111') {
+    if(this.loginEmail === 'admin' && this.loginPassword === 'admin') {
       console.log('Login OK!');
       this.routeGuardService.setLogin();
       this.router.navigate(['client/list']);

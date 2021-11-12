@@ -22,7 +22,7 @@ export class FormFatturaComponent implements OnInit {
   ngOnInit(): void {
       this.route.params.subscribe(element => {
         if(!element.id){
-      this.title = "Nuovo Cliente";
+      this.title = "Nuova Fattura";
       this.editFattura = new Fattura()
       // this.fattureService.createFattura(this.editFattura).subscribe(response => this.editFattura = response);
     } else {

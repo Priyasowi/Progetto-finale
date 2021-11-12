@@ -1,5 +1,10 @@
 export interface IProvince {
-    id?: number,
+   content: Province[];
+}
+
+export interface Province{
+     id?: number,
     nome: string,
     sigla: string
+
 }

@@ -16,7 +16,7 @@ export class ComuniService {
   }
 
   getAllComuni() {
-    return this.http.get<IComuni[]>(this.urlAPIcomuni,)
+    return this.http.get<IComuni>(this.urlAPIcomuni )
   }
   getComune(id: number) {
     return this.http.get(this.urlAPIcomune + '/' + id)
