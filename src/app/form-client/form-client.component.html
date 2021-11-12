@@ -42,7 +42,7 @@
           </div>
           <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
             <option selected [ngValue]="editClient.tipoCliente"></option>
-            <option [ngValue]="item" *ngFor="let item of province">{{editClient.tipoCliente}}</option>
+            <option [ngValue]="item" *ngFor="let item of tipoCliente">{{editClient.tipoCliente}}</option>
           </select>
         </div>
         <div class="form-group">
@@ -74,24 +74,21 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Comune</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
+              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeLegale.comune">
                 <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.nome"></option>
                 <option [ngValue]="item" *ngFor="let item of comuni">{{item}}</option>
               </select>
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Provincia</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.provincia.nome"></option>
+              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeLegale.comune.provincia">
+                <option selected [ngValue]="editClient.indirizzoSedeLegale.comune.provincia.nome"></option>
                 <option [ngValue]="item" *ngFor="let item of province">{{item}}</option>
               </select>
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Sigla</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.provincia.sigla"></option>
-                <option [ngValue]="item" *ngFor="let item of comuni">{{item}}</option>
-              </select>
+             
             </div>
           </div>
           <div class="col-sm-6">
@@ -108,16 +105,23 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Comune</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune"></option>
+              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeOperativa.comune">
+                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.nome"></option>
                 <option [ngValue]="item" *ngFor="let item of comuni">{{item}}</option>
               </select>
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Provincia</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
-                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.provincia"></option>
+              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.indirizzoSedeOperativa.comune.provincia">
+                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.provincia.nome"></option>
                 <option [ngValue]="item" *ngFor="let item of province">{{item}}</option>
+              </select>
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Sigla</label>
+              </div>
+              <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="editClient.tipoCliente">
+                <option selected [ngValue]="editClient.indirizzoSedeOperativa.comune.provincia.sigla"></option>
+                <option [ngValue]="item" *ngFor="let item of comuni">{{item}}</option>
               </select>
             </div>
 
