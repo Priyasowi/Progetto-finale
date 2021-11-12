@@ -15,9 +15,9 @@ export class DetailClientComponent implements OnInit {
   constructor(private clientService: ClientService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(element => {
-      if(element.id) {
-        this.clientService.getClient(element.id).subscribe(client => this.detailClient = client);
+    this.route.params.subscribe(client => {
+      if(client.id) {
+        this.clientService.getClient(client.id).subscribe(res => this.detailClient = res);
       }
     });
   }

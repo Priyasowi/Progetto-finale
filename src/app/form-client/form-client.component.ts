@@ -37,6 +37,7 @@ export class FormClientComponent implements OnInit {
       cap: "",
       localita: "",
       comune: {
+        id:0,
         nome: "",
         provincia: {
           nome: "",
@@ -50,6 +51,7 @@ export class FormClientComponent implements OnInit {
       cap: "",
       localita: "",
       comune: {
+        id:0,
         nome: "",
         provincia: {
           nome: "",

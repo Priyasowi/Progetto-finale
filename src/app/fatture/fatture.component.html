@@ -2,6 +2,7 @@
 
 <div class="container my-5">
     <h1 class="text-center">Fatture Clienti</h1>
+    <button type="button" class="btn btn-info btn-lg float-left" (click)="newFattura()"><i class="bi bi-journal-plus"></i></button>
     <table class="table table-striped">
         <thead>
           <tr class="barra">
@@ -18,15 +19,16 @@
           <tr *ngFor="let item of fatture.contentf; index as i">
             <th scope="row">{{i + 1}} </th>
             <td>{{item.data}}</td>
-            <td>{{item.stato.nome}}</td>
+            <td>{{item.numero}</td>
+            <td>{{item.anno}}</td>
             <td>{{item.importo}}</td>
-            <td></td>
+            <td>{{item.stato.nome}}</td>
             <td></td>
              <td>
-          <button type="button" class="btn btn-outline-danger btn-sm mx-1" (click)="removeClient(item)"><i
+          <button type="button" class="btn btn-outline-danger btn-sm mx-1" ><i
               class="bi bi-trash"></i></button>
         </td>
-           
+         
           </tr>
         </tbody>
        

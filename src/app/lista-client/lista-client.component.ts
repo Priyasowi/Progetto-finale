@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { IClient } from '../interfaces/iclient';
 import { Icontent } from '../interfaces/icontent';
 import { ClientService } from '../services/client.service';
@@ -16,18 +16,20 @@ export class ListaClientComponent implements OnInit {
   constructor(
   private clientService: ClientService,
    private router: Router,
-   private route: ActivatedRoute) { }
+ ) { }
 
   ngOnInit(): void {
     this.clientService.getAllClient().subscribe(response => this.client = response);
   
   }
 
-  detailClient(clienti : IClient) {
-    this.router.navigate(['client/detail', clienti.id, ]);
+  detailClient(item : IClient) {
+    this.router.navigate(['client', item.id, 'detail']);
   }
-  removeClient(clienti: IClient) {
-    this.clientService.deleteClient(clienti).subscribe(response => {
+
+
+  removeClient(item: IClient) {
+    this.clientService.deleteClient(item).subscribe(response => {
       console.log(response);
       this.clientService.getAllClient().subscribe(response => this.client = response);
     })
@@ -36,7 +38,7 @@ export class ListaClientComponent implements OnInit {
   newClient(){
     this.router.navigate(['client/new']);
   }
-  selectClient(clienti: IClient) {
-    this.router.navigate(['client', clienti.id, 'edit']);
+  selectClient(item: IClient) {
+    this.router.navigate(['client', item.id, 'edit']);
   }
 }

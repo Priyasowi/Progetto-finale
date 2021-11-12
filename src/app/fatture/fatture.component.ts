@@ -21,12 +21,14 @@ export class FattureComponent implements OnInit {
       ) { }
 
   ngOnInit(): void {
-  //  this.fattureService.getAllFatture().subscribe(response => this.fattura = response);
+ 
   this.fattureService.getAllFatture().subscribe(response => this.fatture = response);
   }
   removeClient(item : IFatture){
 
   }
-
+  newFattura(){
+    this.router.navigate(['fattura/new']);
+  }
   
 }

@@ -15,6 +15,7 @@ import { FattureComponent } from './fatture/fatture.component';
 import { FormsModule } from '@angular/forms';
 import { FormClientComponent } from './form-client/form-client.component';
 import { LoginComponent } from './login/login.component';
+import { FormFatturaComponent } from './form-fattura/form-fattura.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     FattureComponent,
     LoginComponent,
+    FormFatturaComponent,
   
   ],
   imports: [

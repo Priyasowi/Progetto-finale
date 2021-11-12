@@ -22,13 +22,15 @@ export class FattureService {
   }
 
   getFattureById(id : number) {
-    return this.http.get(this.urlAPIDetailf + '/' + id)
+    return this.http.get<IFatture>(this.urlAPIDetailf + '/' + id)
   }
 
   deleteFattura(fattura : IFatture) {
-    return this.http.delete(this.urlAPIFatture + fattura);
+    return this.http.delete(this.urlAPIDetailf + '/' + fattura.id);
   }
-
+  createFattura(fattura : IFatture) {
+    return this.http.post<IFatture>(this.urlAPIDetailf, fattura);
+  }
   updateFattura(fattura : IFatture) {
     return this.http.put<IFatture>(this.urlAPIDetailf + fattura.id, fattura);
   }

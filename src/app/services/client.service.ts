@@ -24,12 +24,12 @@ export class ClientService {
   getAllTipiClienti() {
     return this.http.get<string>(this.urlAPITipiCliente,)
   }
-  getClient(id: any) {
-    return this.http.get<any>(this.urlAPIDetail+ '/'+ id);
+  getClient(id: number) {
+    return this.http.get<IClient>(this.urlAPIDetail+'/'+ id);
   }
 
-  deleteClient(clienti: IClient) {
-    return this.http.delete(this.urlAPI + clienti.id);
+  deleteClient(item: IClient) {
+    return this.http.delete(this.urlAPIDetail +'/'+ item.id);
   }
 
   createClient(clienti: IClient) {
